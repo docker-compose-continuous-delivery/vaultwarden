@@ -17,6 +17,8 @@ services:
       - "traefik.http.routers.vaultwarden.tls=true"
       - "traefik.http.routers.vaultwarden.tls.certresolver=cloudflare"
       - "traefik.http.services.vaultwarden.loadbalancer.server.port=80"
+
+      - "com.centurylinklabs.watchtower.enable=true"
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:80" ]
 
